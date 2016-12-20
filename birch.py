@@ -72,10 +72,10 @@ try:
 		result = sock.connect_ex((remote_server_IP, port))
 		if result == 0:
 			try:
-				print("Port {} \x1b[1;34;40m({})\x1b[0m:		\x1b[1;32;40mOpen\x1b[0m".format(port, known_ports[port]))
+				print("Port {} \x1b[1;34;40m({})\x1b[0m:\x1b[1;32;40mOpen\x1b[0m".format(port, known_ports[port]))
 
 			except KeyError:
-				print("Port {}:		Open".format(port))
+				print("Port {}: Open".format(port))
 		sock.close()
 
 except KeyboardInterrupt:

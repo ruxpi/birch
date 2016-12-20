@@ -14,7 +14,12 @@ subprocess.run("clear")
 
 # Ask for imput
 remote_server = input("Enter a remote host to scan: ")
-remote_server_IP = socket.gethostbyname(remote_server)
+
+try:
+	remote_server_IP = socket.gethostbyname(remote_server)
+except socket.gaierror:
+	print("Unable to resolve host")
+	quit()
 
 #Printer banner with info on which host will be scanned
 print("-" * 60)

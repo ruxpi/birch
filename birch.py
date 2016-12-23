@@ -65,6 +65,8 @@ known_ports = {
 	82: "TorPark",
 	88: "Kerberos",
 	90: "DNSIX",
+	139: "NetBIOS",
+	445: "MS AD"
 }
 
 # Using the range function to specify ports
@@ -72,12 +74,12 @@ known_ports = {
 # Error handling for catching errors
 
 try:
-	for port in range(1, 1024):
+	for port in range(1, 65536):
 		sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 		result = sock.connect_ex((remote_server_IP, port))
 		if result == 0:
 			try:
-				print("Port {} \x1b[1;34;40m({})\x1b[0m:\x1b[1;32;40mOpen\x1b[0m".format(port, known_ports[port]))
+				print("Port {} \x1b[1;34;40m({})\x1b[0m:		\x1b[1;32;40mOpen\x1b[0m".format(port, known_ports[port]))
 
 			except KeyError:
 				print("Port {}: Open".format(port))

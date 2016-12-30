@@ -3,17 +3,24 @@
 # Author: Shawn Rose
 #########################################
 #!/user/bin/env python3
+import argparse
 import socket
 import subprocess
 import sys
 
 from datetime import datetime
 
+# create argument parser and parse arguements
+parser = argparse.ArgumentParser(description='Port scan remote host')
+parser.add_argument('host', metavar='H', type=str, help='Remote host name or IP address')
+args = vars(parser.parse_args())
+
 # clear the screen
 subprocess.run("clear")
 
-# Ask for imput
-remote_server = input("Enter a remote host to scan: ")
+# use parsed arguments
+remote_server = args.get('host')
+print(remote_server)
 
 try:
 	remote_server_IP = socket.gethostbyname(remote_server)

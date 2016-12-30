@@ -7,6 +7,7 @@ import argparse
 import socket
 import subprocess
 import sys
+from port_data import known_ports
 
 from datetime import datetime
 
@@ -36,48 +37,7 @@ print("-" * 60)
 #check what time scan starts
 t1 = datetime.now()
 
-# Dictonary of well known ports
-known_ports = {
-	1: "TCPMUX",
-	5: "Remote job entry",
-	7: "Echo",
-	9: "Discard",
-	11: "Systat",
-	13: "Daytime",
-	15: "Formerly netstat",
-	17: "QOTD",
-	18: "Message Send",
-	19: "CHARGEN",
-	20: "FTP",
-	21: "FTP",
-	22: "SSH",
-	23: "Telnet",
-	25: "SMTP",
-	37: "Time",
-	38: "RAP",
-	39: "RLP",
-	42: "Host Name Server",
-	43: "WHOIS",
-	49: "TACACS+",
-	51: "IMP",
-	52: "XNS",
-	53: "DNS",
-	54: "XNS",
-	56: "XNS",
-	57: "Private Terminal",
-	58: "XNS",
-	67: "BOOTP",
-	80: "http",
-	81: "TorPark",
-	82: "TorPark",
-	88: "Kerberos",
-	90: "DNSIX",
-	139: "NetBIOS",
-	445: "MS AD"
-}
-
 # Using the range function to specify ports
-
 # Error handling for catching errors
 
 try:
